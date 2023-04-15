@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import Layout from '../components/layout';
 
 export default function IndexPage() {
   const data = useStaticQuery(graphql`
@@ -24,7 +23,7 @@ export default function IndexPage() {
   const posts = data.allMdx.nodes;
 
   return (
-    <Layout>
+    <>
       <h1>Hello Frontend Masters!</h1>
       <Link to="/about">About this site</Link>
 
@@ -37,6 +36,16 @@ export default function IndexPage() {
           </li>
         ))}
       </ul>
-    </Layout>
+    </>
   );
 }
+
+export const Head = () => (
+  <>
+    <title id="title">About this Site</title>
+    <meta
+      property="og:description"
+      content="More information about this site."
+    />
+  </>
+);
