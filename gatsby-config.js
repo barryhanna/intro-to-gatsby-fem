@@ -7,6 +7,7 @@ module.exports = {
       'https://res.cloudinary.com/jlengstorf/image/upload/v1628127675/frontend-masters/gatsby-intro/share-image.jpg',
   },
   plugins: [
+    'gatsby-plugin-slug',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
